@@ -1,10 +1,11 @@
 'use strict'
-let credits = 23530;
+const credits = 23530;
 const pricePerDroid = 3000;
 const qestion = "Введите количество дронов которые вы хотите приобрести ?"
-const massage1 = credits - pricePerDroid;
 const cancel = "Отменено пользователем!"
 let massage ;
+let cost ;
+
 
 let result = prompt(qestion);
 if( result === null ){
@@ -13,12 +14,11 @@ if( result === null ){
     result = Number(result);
     const totalPrice = result * pricePerDroid ;
      if( totalPrice < credits ){
-        credits = credits - result*pricePerDroid;
-        massage = `Вы купили ${result} дроидов, на счету осталось ${credits} кредитов.`;
+        cost = credits - result*pricePerDroid;
+        massage = `Вы купили ${result} дроидов, на счету осталось ${cost} кредитов.`;
     }
     else{
         massage = 'Недостаточно средств на счету!';
     }
 }
 alert(massage);
-
